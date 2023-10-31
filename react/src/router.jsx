@@ -7,6 +7,13 @@ import NotFound from "./views/NotFound";
 import Signup from "./views/Signup";
 import Users from "./views/Users";
 import UserForm from "./views/UserForm";
+import RiskManagement from "./views/RiskManagement.jsx";
+import ProgramRequirement from "./views/ProgramRequirement.jsx";
+import CyberSecurity from "./views/CyberSecurity.jsx";
+import Policies from "./views/Policies.jsx";
+import Dealer from "./views/Dealer.jsx";
+import TwoFactor from "./views/TwoFactor.jsx"
+import SubmitFactor from "./views/SubmitFactor.jsx"
 
 const router = createBrowserRouter([
   {
@@ -20,10 +27,30 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard/>
-      },
+      },      
       {
         path: '/users',
         element: <Users/>
+      },
+      {
+        path: '/riskmanagement',
+        element: <RiskManagement/>
+      },
+      {
+        path: '/programrequirement',
+        element: <ProgramRequirement/>
+      },
+      {
+        path: '/cybersecurity',
+        element: <CyberSecurity/>
+      },
+      {
+        path: '/policies',
+        element: <Policies/>
+      },
+      {
+        path: '/dealer',
+        element: <Dealer/>
       },
       {
         path: '/users/new',
@@ -42,6 +69,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login/>
+      },
+      {
+        path: '/twofactor',
+        element: <TwoFactor/>
+      },
+      {
+        path: '/submitotp',
+        element: <SubmitFactor/>
       },
       {
         path: '/signup',

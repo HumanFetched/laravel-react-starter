@@ -32,6 +32,11 @@ export default function DefaultLayout() {
       <aside>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/users">Users</Link>
+        <Link to="/riskmanagement">Risk Managemnet</Link>
+        <Link to="/programrequirement">Program Requirement</Link>
+        <Link to="/cybersecurity">Cyber Security</Link>
+        <Link to="/dealer">Dealer Website</Link>
+        <Link to="/policies">Policies & Document</Link>
       </aside>
       <div className="content">
         <header>

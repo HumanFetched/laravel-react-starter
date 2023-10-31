@@ -31,13 +31,14 @@ export default function Signup() {
           setErrors(response.data.errors)
         }
       })
+    
   }
 
   return (
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
-          <h1 className="title">Signup for Free</h1>
+          <h1 className="title">Signup here...</h1>
           {errors &&
             <div className="alert">
               {Object.keys(errors).map(key => (

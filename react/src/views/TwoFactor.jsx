@@ -6,18 +6,16 @@ import { useState } from "react";
 
 export default function Login() {
   const emailRef = createRef()
-  const passwordRef = createRef()
   const { setUser, setToken } = useStateContext()
   const [message, setMessage] = useState(null)
 
   const onSubmit = ev => {
-    ev.preventDefault()
+    ev.preventDefault();
 
     const payload = {
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
+      email: emailRef.current.value,     
     }
-    axiosClient.post('/login', payload)
+    axiosClient.post('/twofactor', payload)
       .then(({data}) => {
         setUser(data.user)
         setToken(data.token);
@@ -31,10 +29,11 @@ export default function Login() {
   }
 
   return (
+    <>
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
-          <h1 className="title">Login into your account</h1>
+          <h1 className="title">2FA Authentication Request</h1>
 
           { message &&
             <div className="alert">
@@ -43,12 +42,15 @@ export default function Login() {
           }
 
           <input ref={emailRef} type="email" placeholder="Email"/>
-          <input ref={passwordRef} type="password" placeholder="Password"/>
-          <button className="btn btn-block">Login</button>
-          <p className="message">Need <Link to="/twofactor">2FA authentication?</Link></p>
-          <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
+     
+          <button className="btn btn-block">Request Otp</button> 
+          {/* <button className="btn btn-block"><Link to="/submitotp">Request Otp</Link></button>      */}
+          {/* <p className="message">Not registered? <Link to="/signup">Create an account</Link></p> */}
         </form>
       </div>
     </div>
+
+    </>
+    
   )
 }

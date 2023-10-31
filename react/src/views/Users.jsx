@@ -3,12 +3,29 @@ import axiosClient from "../axios-client.js";
 import {Link} from "react-router-dom";
 import {useStateContext} from "../context/ContextProvider.jsx";
 
+
+const spinnerStyles = {
+  border: "10px solid rgba(0, 0, 0,0.5)",
+  borderTop: "10px solid #3498db",
+  borderRadius: "50%",
+  width: "100px",
+  height: "100px",
+  position: "absolute",
+  top: "200%",
+  left: "45%",
+  animation: "spin 1s linear infinite",
+  transform: "translate(-50%, -50%)",
+};
+
+
+
 export default function Users() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const {setNotification} = useStateContext()
+  
 
-  useEffect(() => {
+  useEffect(() => {    
     getUsers();
   }, [])
 
@@ -25,14 +42,17 @@ export default function Users() {
 
   const getUsers = () => {
     setLoading(true)
-    axiosClient.get('/users')
-      .then(({ data }) => {
-        setLoading(false)
-        setUsers(data.data)
-      })
-      .catch(() => {
-        setLoading(false)
-      })
+    setTimeout(() => {
+      axiosClient
+        .get("/users")
+        .then(({ data }) => {
+          setLoading(false);
+          setUsers(data.data);
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    },);
   }
 
   return (
@@ -56,7 +76,7 @@ export default function Users() {
             <tbody>
             <tr>
               <td colSpan="5" class="text-center">
-                Loading...
+              <div style={spinnerStyles}></div>
               </td>
             </tr>
             </tbody>

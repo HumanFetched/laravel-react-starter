@@ -11,6 +11,19 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
+
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
@@ -74,12 +87,14 @@ input:focus {
 .btn-logout {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
-    color: #212121;
+    color: #ffffff;
     transition: all 0.3s;
     border-radius: 6px;
+    background-color: #00a762;
 }
 .btn-logout:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.877);
+    color: #ffffff;
 }
 
 .btn:hover,
@@ -110,14 +125,70 @@ table > tbody > tr > td {
     white-space: nowrap;
 }
 
-.card {
-    background-color: #FFF;
+.card1{
+    background-color: #bedfa4;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
     padding: 1.25rem 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+  
 }
+.card2{
+    background-color: #e07a7a;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  
+}
+.card3{
+    background-color: #8495e2;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  
+}
+.card4{
+    background-color: #d06cc8;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  
+}
+
+/* data-filter */
+div.input-group.data-filter {
+    display: inline-flex;
+    width: 16em;
+  }
+  
+  /* data-colpicker */
+  div[data-colpicker-for] {
+    display: inline-block;
+    vertical-align: top;;
+    width: 12em;
+  }
+  
+  ul.dropdown-menu li {
+    margin: .15em 1em;
+  }
+  
+  ul.dropdown-menu li label {
+    width: 100%;
+  }
+  
+  /* hide table rows/columns */
+  th.hide-cell,
+  td.hide-cell,
+  tr.hide-row {
+    display: none;
+  }
 
 .alert {
     padding: 1rem;
@@ -198,7 +269,8 @@ table > tbody > tr > td {
 }
 
 #defaultLayout aside > a:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgb(255 255 255 / 20%);
+    border: 1px solid;
 }
 
 #defaultLayout .content {
