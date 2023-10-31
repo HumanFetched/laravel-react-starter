@@ -3,6 +3,7 @@ import { useState } from 'react'
 function Dealer() {
 
   return (
+
     <>
        <ul className="nav nav-tabs">
   <li className="nav-item">
@@ -27,6 +28,9 @@ function Dealer() {
 </ul>
       
     </>
+
+   
+
   )
 }
 
