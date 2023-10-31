@@ -31,10 +31,11 @@ export default function Login() {
   }
 
   return (
+    <>
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={onSubmit}>
-          <h1 className="title">Login into your account</h1>
+          <h1 className="title">2FA Authentication Submit</h1>
 
           { message &&
             <div className="alert">
@@ -42,13 +43,14 @@ export default function Login() {
             </div>
           }
 
-          <input ref={emailRef} type="email" placeholder="Email"/>
-          <input ref={passwordRef} type="password" placeholder="Password"/>
-          <button className="btn btn-block">Login</button>
-          <p className="message">Need <Link to="/twofactor">2FA authentication?</Link></p>
-          <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
+          <input ref={emailRef} type="email" placeholder="Enter Otp"/>     
+          <button className="btn btn-block">Submit Otp</button>     
+          
         </form>
       </div>
     </div>
+
+    </>
+    
   )
 }
